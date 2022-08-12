@@ -1,0 +1,8 @@
+{
+    "molecule": "\n            Li\n            H 1 3.7\n            symmetry c1\n            ",
+    "basis_set": "sto-3g",
+    "nuclear_repulsion_energy": 0.4290626032459459,
+    "ci_type": "fci",
+    "ci_ground_state_energy": -7.786082260447767,
+    "ci_total_num_configs": 225
+}

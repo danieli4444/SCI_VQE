@@ -1,0 +1,26 @@
+{
+    "output_name": "noisy_simulator_8",
+    "mol_dir": "benzene_nist_MP2_32768",
+    "ci_matrix_filepath": "benzene_nist_MP2_32768/CI_matrices/benzene_nist_MP2_32768_cimat__8.out",
+    "backend_type": "simulator",
+    "backend_name": "ibmq_santiago",
+    "encoding_type": "efficient",
+    "ci_params_dict": {
+        "molecule": "\n        C    0.000 \t1.416 \t0.000\n        C \t1.226 \t0.708 \t0.000\n        C \t1.226 \t-0.708 \t0.000\n        C \t0.000 \t-1.416 \t0.000\n        C \t-1.226 \t-0.708 \t0.000\n        C \t-1.226 \t0.708 \t0.000\n        H \t0.000 \t2.517 \t0.000\n        H \t2.180 \t1.259 \t0.000\n        H \t2.180 \t-1.259 \t0.000\n        H \t0.000 \t-2.517 \t0.000\n        H \t-2.180 \t-1.259 \t0.000\n        H \t-2.180 \t1.259 \t0.000\n        symmetry c1\n    ",
+        "basis_set": "sto-3g",
+        "nuclear_repulsion_energy": 200.4430632632143,
+        "ci_type": "cisdt",
+        "ci_ground_state_energy": -228.2551930614793,
+        "ci_total_num_configs": 15245756
+    },
+    "shift": 200.4430632632143,
+    "simulator": "qasm_simulator",
+    "ansatz_layers": 2,
+    "entanglement_type": "circular",
+    "max_iterations": 300,
+    "shots": 100000,
+    "use_noise": true,
+    "use_error_mit": true,
+    "cals_matrix_refresh_period": 30,
+    "output_dir": "benzene_nist_MP2_32768/noisy_simulator_8_VQE_result_Wed Jul 13 12:17:47 2022"
+}

@@ -1,0 +1,26 @@
+{
+    "output_name": "statevector",
+    "mol_dir": "BeH2_dist/BeH2_0.5",
+    "ci_matrix_filepath": "BeH2_dist/BeH2_0.5/CI_matrices//BeH2_0.5_cimat__16.out",
+    "backend_type": "simulator",
+    "backend_name": "None",
+    "encoding_type": "efficient",
+    "ci_params_dict": {
+        "molecule": "\n\n        0 1\n        Be 0 0 0 \n        H 0 0 0.5\n        H 0 0 -0.5\n        symmetry c1\n        ",
+        "basis_set": "sto-3g",
+        "nuclear_repulsion_energy": 8.99601258139,
+        "ci_type": "fci",
+        "ci_ground_state_energy": -13.689960306688933,
+        "ci_total_num_configs": 1225
+    },
+    "shift": 8.99601258139,
+    "simulator": "statevector_simulator",
+    "ansatz_layers": 3,
+    "entanglement_type": "circular",
+    "max_iterations": 200,
+    "shots": 10000,
+    "use_noise": false,
+    "use_error_mit": false,
+    "cals_matrix_refresh_period": 30,
+    "output_dir": "BeH2_dist/BeH2_0.5/statevector_VQE_result_Fri Jul 22 01:17:59 2022"
+}

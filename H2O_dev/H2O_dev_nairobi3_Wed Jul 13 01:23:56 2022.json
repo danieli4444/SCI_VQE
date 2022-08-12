@@ -1,0 +1,78 @@
+{
+    "statevector": {
+        "configs": [],
+        "vqe_optimal_energy_list": [],
+        "vqe_minimal_energy_list": [],
+        "exact_energy_list": [],
+        "vqe_std_list": [],
+        "vqe_averaged_energy_list": [],
+        "vqe_averaged_energy_std_list": [],
+        "vqe_layers_used": [],
+        "final_averaged_energy": [
+            -74.97437597076498
+        ],
+        "final_averaged_std": [
+            0.00024911029748864166
+        ],
+        "final_energy_list": [
+            -74.97412686046749,
+            -74.97462508106247
+        ]
+    },
+    "noisy_simulator": {
+        "configs": [
+            2
+        ],
+        "vqe_optimal_energy_list": [
+            -74.97537547758216
+        ],
+        "vqe_minimal_energy_list": [
+            -74.97614330362464
+        ],
+        "exact_energy_list": [
+            -74.97490887856114
+        ],
+        "vqe_std_list": [
+            0.0005695618610929157
+        ],
+        "vqe_averaged_energy_list": [
+            -74.97462508106247
+        ],
+        "vqe_averaged_energy_std_list": [
+            0.0010225614669303925
+        ],
+        "vqe_layers_used": [
+            0.0
+        ],
+        "final_averaged_energy": [
+            -74.97437597076498
+        ],
+        "final_averaged_std": [
+            0.00024911029748864166
+        ],
+        "final_energy_list": [
+            -74.97412686046749,
+            -74.97462508106247
+        ]
+    },
+    "IBM_real": {
+        "configs": [],
+        "vqe_optimal_energy_list": [],
+        "vqe_minimal_energy_list": [],
+        "exact_energy_list": [],
+        "vqe_std_list": [],
+        "vqe_averaged_energy_list": [],
+        "vqe_averaged_energy_std_list": [],
+        "vqe_layers_used": [],
+        "final_averaged_energy": [
+            -74.97437597076498
+        ],
+        "final_averaged_std": [
+            0.00024911029748864166
+        ],
+        "final_energy_list": [
+            -74.97412686046749,
+            -74.97462508106247
+        ]
+    }
+}

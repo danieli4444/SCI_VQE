@@ -1,0 +1,26 @@
+{
+    "output_name": "IBM_real_16",
+    "mol_dir": "BeH2",
+    "ci_matrix_filepath": "BeH2/CI_matrices/BeH2_cimat__16.out",
+    "backend_type": "IBMQ",
+    "backend_name": "ibm_oslo",
+    "encoding_type": "efficient",
+    "ci_params_dict": {
+        "molecule": "\n\n        0 1\n        Be 0 0 0 \n        H 0 0 1.29\n        H 0 0 -1.29\n        symmetry c1\n        ",
+        "basis_set": "sto-3g",
+        "nuclear_repulsion_energy": 3.4868265819341087,
+        "ci_type": "fci",
+        "ci_ground_state_energy": -15.594724298782447,
+        "ci_total_num_configs": 1225
+    },
+    "shift": 3.4868265819341087,
+    "simulator": "",
+    "ansatz_layers": 3,
+    "entanglement_type": "circular",
+    "max_iterations": 100,
+    "shots": 20000,
+    "use_noise": true,
+    "use_error_mit": true,
+    "cals_matrix_refresh_period": 30,
+    "output_dir": "BeH2/IBM_real_16_VQE_result_Sun Jul 17 10:02:49 2022"
+}

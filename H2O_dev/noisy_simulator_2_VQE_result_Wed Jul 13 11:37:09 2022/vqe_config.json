@@ -1,0 +1,26 @@
+{
+    "output_name": "noisy_simulator_2",
+    "mol_dir": "H2O_dev",
+    "ci_matrix_filepath": "H2O_dev/CI_matrices/H2O_dev_cimat__2.out",
+    "backend_type": "simulator",
+    "backend_name": "ibmq_santiago",
+    "encoding_type": "efficient",
+    "ci_params_dict": {
+        "molecule": "\n        O\n        H 1 0.955\n        H 1 0.955 2 105\n        symmetry c1\n        ",
+        "basis_set": "sto-3g",
+        "nuclear_repulsion_energy": 9.215017810268293,
+        "ci_type": "fci",
+        "ci_ground_state_energy": -75.01156040647396,
+        "ci_total_num_configs": 441
+    },
+    "shift": 9.215017810268293,
+    "simulator": "qasm_simulator",
+    "ansatz_layers": 0,
+    "entanglement_type": "circular",
+    "max_iterations": 200,
+    "shots": 100000,
+    "use_noise": true,
+    "use_error_mit": true,
+    "cals_matrix_refresh_period": 30,
+    "output_dir": "H2O_dev/noisy_simulator_2_VQE_result_Wed Jul 13 11:37:09 2022"
+}

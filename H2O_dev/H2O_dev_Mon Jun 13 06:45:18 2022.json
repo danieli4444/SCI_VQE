@@ -1,0 +1,86 @@
+{
+    "statevector": {
+        "configs": [
+            2,
+            4,
+            8,
+            16,
+            32
+        ],
+        "vqe_optimal_energy_list": [
+            -74.97490887477493,
+            -74.98246437787499,
+            -74.99190127587948,
+            -75.00782108426895,
+            -75.01074886623184
+        ],
+        "vqe_minimal_energy_list": [
+            -74.97490887851417,
+            -74.98246437787499,
+            -74.99190128480373,
+            -75.00782108426895,
+            -75.01074886623184
+        ],
+        "exact_energy_list": [
+            -74.97490887856114,
+            -74.98246438333956,
+            -74.9919012884516,
+            -75.00782125864295,
+            -75.01133472700084
+        ],
+        "vqe_std_list": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "vqe_averaged_energy_list": [
+            -74.97490705146707,
+            -74.98246436521504,
+            -74.99190128104517,
+            -75.00782100352026,
+            -75.01074876093992
+        ],
+        "vqe_averaged_energy_std_list": [
+            3.0376214719699467e-06,
+            8.996470847019138e-09,
+            2.8953188480381616e-09,
+            6.145772926567849e-08,
+            5.1243809948616425e-08
+        ],
+        "vqe_layers_used": [
+            0.0,
+            1.0,
+            2.0,
+            3.0,
+            4.0
+        ],
+        "final_averaged_energy": [],
+        "final_averaged_std": []
+    },
+    "noisy_simulator": {
+        "configs": [],
+        "vqe_optimal_energy_list": [],
+        "vqe_minimal_energy_list": [],
+        "exact_energy_list": [],
+        "vqe_std_list": [],
+        "vqe_averaged_energy_list": [],
+        "vqe_averaged_energy_std_list": [],
+        "vqe_layers_used": [],
+        "final_averaged_energy": [],
+        "final_averaged_std": []
+    },
+    "IBM_real": {
+        "configs": [],
+        "vqe_optimal_energy_list": [],
+        "vqe_minimal_energy_list": [],
+        "exact_energy_list": [],
+        "vqe_std_list": [],
+        "vqe_averaged_energy_list": [],
+        "vqe_averaged_energy_std_list": [],
+        "vqe_layers_used": [],
+        "final_averaged_energy": [],
+        "final_averaged_std": []
+    }
+}

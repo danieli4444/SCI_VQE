@@ -1,0 +1,8 @@
+{
+    "molecule": "\n        C    0.000 \t1.416 \t0.000\n        C \t1.226 \t0.708 \t0.000\n        C \t1.226 \t-0.708 \t0.000\n        C \t0.000 \t-1.416 \t0.000\n        C \t-1.226 \t-0.708 \t0.000\n        C \t-1.226 \t0.708 \t0.000\n        H \t0.000 \t2.517 \t0.000\n        H \t2.180 \t1.259 \t0.000\n        H \t2.180 \t-1.259 \t0.000\n        H \t0.000 \t-2.517 \t0.000\n        H \t-2.180 \t-1.259 \t0.000\n        H \t-2.180 \t1.259 \t0.000\n        symmetry c1\n    ",
+    "basis_set": "sto-3g",
+    "nuclear_repulsion_energy": 200.4430632632143,
+    "ci_type": "cisdt",
+    "ci_ground_state_energy": -228.2551930614793,
+    "ci_total_num_configs": 15245756
+}

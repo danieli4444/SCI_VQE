@@ -1,0 +1,57 @@
+{
+    "statevector": {
+        "configs": [],
+        "vqe_optimal_energy_list": [],
+        "vqe_minimal_energy_list": [],
+        "exact_energy_list": [],
+        "vqe_std_list": [],
+        "vqe_averaged_energy_list": [],
+        "vqe_averaged_energy_std_list": [],
+        "vqe_layers_used": [],
+        "final_averaged_energy": [],
+        "final_averaged_std": [],
+        "final_energy_list": []
+    },
+    "noisy_simulator": {
+        "configs": [],
+        "vqe_optimal_energy_list": [],
+        "vqe_minimal_energy_list": [],
+        "exact_energy_list": [],
+        "vqe_std_list": [],
+        "vqe_averaged_energy_list": [],
+        "vqe_averaged_energy_std_list": [],
+        "vqe_layers_used": [],
+        "final_averaged_energy": [],
+        "final_averaged_std": [],
+        "final_energy_list": []
+    },
+    "IBM_real": {
+        "configs": [
+            16
+        ],
+        "vqe_optimal_energy_list": [
+            -15.369528239009965
+        ],
+        "vqe_minimal_energy_list": [
+            -15.369528239009965
+        ],
+        "exact_energy_list": [
+            -15.5938914849163
+        ],
+        "vqe_std_list": [
+            0.0062593644351077735
+        ],
+        "vqe_averaged_energy_list": [
+            -15.223883850255458
+        ],
+        "vqe_averaged_energy_std_list": [
+            0.020322700403922547
+        ],
+        "vqe_layers_used": [
+            3.0
+        ],
+        "final_averaged_energy": [],
+        "final_averaged_std": [],
+        "final_energy_list": []
+    }
+}

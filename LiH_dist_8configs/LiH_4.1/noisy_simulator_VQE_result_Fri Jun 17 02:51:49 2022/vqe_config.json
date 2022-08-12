@@ -1,0 +1,26 @@
+{
+    "output_name": "noisy_simulator",
+    "mol_dir": "LiH_dist_8configs/LiH_4.1",
+    "ci_matrix_filepath": "LiH_dist_8configs/LiH_4.1/CI_matrices//LiH_4.1_cimat__8.out",
+    "backend_type": "simulator",
+    "backend_name": "ibmq_santiago",
+    "encoding_type": "efficient",
+    "ci_params_dict": {
+        "molecule": "\n            Li\n            H 1 4.1\n            symmetry c1\n            ",
+        "basis_set": "sto-3g",
+        "nuclear_repulsion_energy": 0.3872028370756099,
+        "ci_type": "fci",
+        "ci_ground_state_energy": -7.783895276217296,
+        "ci_total_num_configs": 225
+    },
+    "shift": 0.3872028370756099,
+    "simulator": "qasm_simulator",
+    "ansatz_layers": 2,
+    "entanglement_type": "circular",
+    "max_iterations": 100,
+    "shots": 20000,
+    "use_noise": true,
+    "use_error_mit": true,
+    "cals_matrix_refresh_period": 30,
+    "output_dir": "LiH_dist_8configs/LiH_4.1/noisy_simulator_VQE_result_Fri Jun 17 02:51:49 2022"
+}

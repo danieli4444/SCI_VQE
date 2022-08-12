@@ -1,0 +1,26 @@
+{
+    "output_name": "noisy_simulator",
+    "mol_dir": "BeH2_dist/BeH2_2.3",
+    "ci_matrix_filepath": "BeH2_dist/BeH2_2.3/CI_matrices//BeH2_2.3_cimat__16.out",
+    "backend_type": "simulator",
+    "backend_name": "ibmq_santiago",
+    "encoding_type": "efficient",
+    "ci_params_dict": {
+        "molecule": "\n\n        0 1\n        Be 0 0 0 \n        H 0 0 2.3\n        H 0 0 -2.3\n        symmetry c1\n        ",
+        "basis_set": "sto-3g",
+        "nuclear_repulsion_energy": 1.9556549089978263,
+        "ci_type": "fci",
+        "ci_ground_state_energy": -15.378213542687394,
+        "ci_total_num_configs": 1225
+    },
+    "shift": 1.9556549089978263,
+    "simulator": "qasm_simulator",
+    "ansatz_layers": 3,
+    "entanglement_type": "circular",
+    "max_iterations": 200,
+    "shots": 100000,
+    "use_noise": true,
+    "use_error_mit": true,
+    "cals_matrix_refresh_period": 30,
+    "output_dir": "BeH2_dist/BeH2_2.3/noisy_simulator_VQE_result_Fri Jul 22 05:36:11 2022"
+}

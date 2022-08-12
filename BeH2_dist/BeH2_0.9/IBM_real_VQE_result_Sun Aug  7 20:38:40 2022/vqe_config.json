@@ -1,0 +1,27 @@
+{
+    "output_name": "IBM_real",
+    "mol_dir": "BeH2_dist/BeH2_0.9",
+    "ci_matrix_filepath": "BeH2_dist/BeH2_0.9/CI_matrices//BeH2_0.9_cimat__16.out",
+    "backend_type": "IBMQ",
+    "backend_name": "ibm_oslo",
+    "provider": "ibm-q-research/bar-ilan-uni-1/main",
+    "encoding_type": "efficient",
+    "ci_params_dict": {
+        "molecule": "\n\n        0 1\n        Be 0 0 0 \n        H 0 0 0.9\n        H 0 0 -0.9\n        symmetry c1\n        ",
+        "basis_set": "sto-3g",
+        "nuclear_repulsion_energy": 4.997784767438889,
+        "ci_type": "fci",
+        "ci_ground_state_energy": -15.364150937698453,
+        "ci_total_num_configs": 1225
+    },
+    "shift": 4.997784767438889,
+    "simulator": "",
+    "ansatz_layers": 3,
+    "entanglement_type": "circular",
+    "max_iterations": 100,
+    "shots": 20000,
+    "use_noise": true,
+    "use_error_mit": true,
+    "cals_matrix_refresh_period": 30,
+    "output_dir": "BeH2_dist/BeH2_0.9/IBM_real_VQE_result_Sun Aug  7 20:38:40 2022"
+}

@@ -1,0 +1,26 @@
+{
+    "output_name": "statevector",
+    "mol_dir": "LiH_dist_8configs/LiH_2.7",
+    "ci_matrix_filepath": "LiH_dist_8configs/LiH_2.7/CI_matrices//LiH_2.7_cimat__8.out",
+    "backend_type": "simulator",
+    "backend_name": "None",
+    "encoding_type": "efficient",
+    "ci_params_dict": {
+        "molecule": "\n            Li\n            H 1 2.7\n            symmetry c1\n            ",
+        "basis_set": "sto-3g",
+        "nuclear_repulsion_energy": 0.5879746785222223,
+        "ci_type": "fci",
+        "ci_ground_state_energy": -7.811735339056966,
+        "ci_total_num_configs": 225
+    },
+    "shift": 0.5879746785222223,
+    "simulator": "statevector_simulator",
+    "ansatz_layers": 2,
+    "entanglement_type": "circular",
+    "max_iterations": 100,
+    "shots": 10000,
+    "use_noise": false,
+    "use_error_mit": false,
+    "cals_matrix_refresh_period": 30,
+    "output_dir": "LiH_dist_8configs/LiH_2.7/statevector_VQE_result_Fri Jun 17 02:22:25 2022"
+}

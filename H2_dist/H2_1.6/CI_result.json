@@ -1,0 +1,8 @@
+{
+    "molecule": "\n            H\n            H 1 1.6000000000000005\n            symmetry c1\n            ",
+    "basis_set": "sto-3g",
+    "nuclear_repulsion_energy": 0.33073575666874994,
+    "ci_type": "fci",
+    "ci_ground_state_energy": -0.9834727289323315,
+    "ci_total_num_configs": 4
+}
