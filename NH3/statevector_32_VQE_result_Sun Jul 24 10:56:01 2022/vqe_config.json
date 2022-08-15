@@ -1,0 +1,26 @@
+{
+    "output_name": "statevector_32",
+    "mol_dir": "NH3",
+    "ci_matrix_filepath": "NH3/CI_matrices/NH3_cimat__32.out",
+    "backend_type": "simulator",
+    "backend_name": "None",
+    "encoding_type": "efficient",
+    "ci_params_dict": {
+        "molecule": "\n\n        N 0.0 0.0 0.2851841\n        H -0.4697490 0.8136292 -0.0950614\n        H -0.4697490 -0.8136292 -0.0950614\n        H 0.9394980 0.0 -0.0950614\n        symmetry c1\n        ",
+        "basis_set": "sto-3g",
+        "nuclear_repulsion_energy": 11.939959419404682,
+        "ci_type": "fci",
+        "ci_ground_state_energy": -55.51941431811188,
+        "ci_total_num_configs": 3136
+    },
+    "shift": 11.939959419404682,
+    "simulator": "statevector_simulator",
+    "ansatz_layers": 5,
+    "entanglement_type": "circular",
+    "max_iterations": 10000,
+    "shots": 10000,
+    "use_noise": false,
+    "use_error_mit": false,
+    "cals_matrix_refresh_period": 30,
+    "output_dir": "NH3/statevector_32_VQE_result_Sun Jul 24 10:56:01 2022"
+}
