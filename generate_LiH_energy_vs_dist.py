@@ -88,7 +88,7 @@ def generate_vqe_results(distances,molecules_dir,running_options):
 
         if run_opt == 'IBM_real':
             output_name = 'IBM_real'        
-            IBM_distances = [0.5,1.1,1.5,2.0,4.1]
+            IBM_distances = [2.1,4.1]
             # distances = []
             for d in IBM_distances:
                 mol_name = '/LiH_' + '{0}'.format(d)
@@ -100,7 +100,7 @@ def generate_vqe_results(distances,molecules_dir,running_options):
                     ci_matrix_path=ci_matrix_file,
                     output_name = output_name,
                     backend_type='IBMQ',
-                    backend_name='ibm_nairobi',
+                    backend_name='ibmq_quito',
                     encoding_type='efficient',
                     simulator='',
                     ansatz_layers=2,
@@ -218,10 +218,10 @@ if __name__ == "__main__":
     # distances = np.arange(0.5,4.2,0.2)
     # distances = [round(d,2) for d in distances]
     distances = []
-    IBM_distances = [0.5,1.1,1.5,2.1,4.1]
+    IBM_distances = [2.1,4.1]
     # clear_vqe_results(molecules_dir,distances,'statevector')
     # clear_vqe_results(molecules_dir,distances,'noisy_simulator')
-    clear_vqe_results(molecules_dir,IBM_distances,'IBM_real')
+    # clear_vqe_results(molecules_dir,IBM_distances,'IBM_real')
 
     generate_vqe_results(distances,molecules_dir ,running_options)
 

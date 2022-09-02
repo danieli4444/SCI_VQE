@@ -377,8 +377,8 @@ class VQERunner:
 def run_vqe_qasm():
 
     vqeconfig = VQEConfig(
-            mol_dir='C2H4_tridiagonal/',
-            ci_matrix_path='C2H4_tridiagonal/CI_matrices/C2H4_tridiagonal_cimat__16.out',
+            mol_dir='NH3/',
+            ci_matrix_path='NH3/CI_matrices/NH3_cimat__4.out',
             output_name='config64',
             backend_type='simulator',
             backend_name='ibmq_santiago',

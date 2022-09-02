@@ -1,0 +1,73 @@
+{
+    "statevector": {
+        "configs": [],
+        "vqe_optimal_energy_list": [],
+        "vqe_minimal_energy_list": [],
+        "exact_energy_list": [],
+        "vqe_std_list": [],
+        "vqe_averaged_energy_list": [],
+        "vqe_averaged_energy_std_list": [],
+        "vqe_layers_used": [],
+        "final_averaged_energy": [],
+        "final_averaged_std": [],
+        "final_energy_list": []
+    },
+    "noisy_simulator": {
+        "configs": [],
+        "vqe_optimal_energy_list": [],
+        "vqe_minimal_energy_list": [],
+        "exact_energy_list": [],
+        "vqe_std_list": [],
+        "vqe_averaged_energy_list": [],
+        "vqe_averaged_energy_std_list": [],
+        "vqe_layers_used": [],
+        "final_averaged_energy": [],
+        "final_averaged_std": [],
+        "final_energy_list": []
+    },
+    "IBM_real": {
+        "configs": [
+            2,
+            4,
+            8
+        ],
+        "vqe_optimal_energy_list": [
+            -55.46446319886849,
+            -55.45655411575432,
+            -55.21688204231486
+        ],
+        "vqe_minimal_energy_list": [
+            -55.465057970285265,
+            -55.46766430925923,
+            -55.26243527135217
+        ],
+        "exact_energy_list": [
+            -55.464287887028554,
+            -55.47759417324355,
+            -55.48871640355478
+        ],
+        "vqe_std_list": [
+            0.0016654145719672616,
+            0.002541997284462926,
+            0.003775795040631357
+        ],
+        "vqe_averaged_energy_list": [
+            -55.4608419988031,
+            -55.45362367315697,
+            -55.22356929779365
+        ],
+        "vqe_averaged_energy_std_list": [
+            0.004192772081724452,
+            0.004003684125248167,
+            0.009264412599781297
+        ],
+        "vqe_layers_used": [
+            0.0,
+            1.0,
+            2.0
+        ],
+        "final_averaged_energy": [],
+        "final_averaged_std": [],
+        "final_energy_list": []
+    }
+}
