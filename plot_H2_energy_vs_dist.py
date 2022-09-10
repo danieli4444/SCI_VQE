@@ -14,8 +14,9 @@ def plot_results(results_file_path,output_file,error_output_file):
     # IBM_real = total_results['IBM_real']
     chemical_accuracy = 0.0016
     
-    fig = plt.figure(figsize=(5.5,5))
+    fig = plt.figure(figsize=(5.7,5.2))
     ax = fig.add_subplot(111)
+    
     plt.xlabel("Interatomic distance [Angstrom]",fontsize=15)
     plt.ylabel("Energy [Ha]",fontsize=15)
     
@@ -54,11 +55,13 @@ def plot_results(results_file_path,output_file,error_output_file):
     plt.show()
 
 
-    fig = plt.figure(figsize=(5.5,4.5))
+    # fig = plt.figure(figsize=(5.5,4.5))
+    # ax = fig.add_subplot(111)
+    fig = plt.figure(figsize=(5.7,5.2))
     ax = fig.add_subplot(111)
-
+    
   
-
+    
     diff_sim = []
     for idx,d in enumerate(distances):
         p = noisy_simulator['vqe_averaged_energy_list'][idx] - exact_energies[idx]
@@ -80,6 +83,17 @@ def plot_results(results_file_path,output_file,error_output_file):
     plt.errorbar(distances,len(distances)*[0],color='green',linestyle='dashed')
     plt.fill_between(distances,z - chemical_accuracy_line, z + chemical_accuracy_line,color='palegreen')
 
+    
+    diff_statevector = []
+    for idx,d in enumerate(distances):
+        p = statevector['vqe_averaged_energy_list'][idx] - exact_energies[idx]
+        diff_statevector.append(p)
+    
+    plt.errorbar(distances,diff_statevector,yerr=statevector['vqe_averaged_energy_std_list'],
+        ecolor = 'blue',capsize=2,label='Noiseless (IBMQ Lima)',color='blue',fmt='^')
+
+    
+    
     text = "Hydrogen Molecule - Energy error (VQE - Exact)"
     # y_axis = np.arange(-0.006, 0.007, 0.001)
     # plt.yticks(y_axis)

@@ -36,7 +36,8 @@ def plot_results(results_file_path,output_file,error_output_file):
     
     
     IBM_real = total_results['IBM_real']
-    IBM_distances = IBM_real['distance']
+    # IBM_distances = IBM_real['distance']
+    IBM_distances = [0.5, 1.1, 1.5, 2.1, 4.1]
 
     plt.errorbar(IBM_distances,IBM_real['vqe_averaged_energy_list'],yerr=IBM_real['vqe_averaged_energy_std_list'],
         ecolor = 'red',capsize=2,label='Real hardware (IBMQ Quito)',color='red',fmt='s')
@@ -78,6 +79,18 @@ def plot_results(results_file_path,output_file,error_output_file):
     plt.errorbar(distances,len(distances)*[0],color='green',linestyle='dashed')
     plt.fill_between(distances,z - chemical_accuracy_line, z + chemical_accuracy_line,color='palegreen')
 
+
+    diff_statevector = []
+    for idx,d in enumerate(distances):
+        p = statevector['vqe_averaged_energy_list'][idx] - exact_energies[idx]
+        diff_statevector.append(p)
+    
+    plt.errorbar(distances,diff_statevector,yerr=statevector['vqe_averaged_energy_std_list'],
+        ecolor = 'blue',capsize=2,label='Noiseless (IBMQ Santiago)',color='blue',fmt='^')
+
+
+        
+
     text = "Hydrogen Molecule - Energy error (VQE - Exact)"
     print(ax.get_data_ratio())
     ax.set_aspect(1.0/ax.get_data_ratio(), adjustable='box')
@@ -95,7 +108,7 @@ if __name__ == "__main__":
     # generate_vqe_results()
     # results_file_path = 'H2_dist/H2_E_vs_dist.json'
     molecules_dir = 'LiH_dist_8configs'
-    results_file_name = "LiH_dist_8configs_Tue Jul 19 11:12:40 2022"
+    results_file_name = "LiH_dist_8configs_Fri Sep  9 00:15:41 2022"
     results_file_path = molecules_dir+ '/' + results_file_name + '.json'
     output_file = molecules_dir+ '/' + results_file_name +'.png'
     error_output_file = molecules_dir + '/error_' + results_file_name + '.png'

@@ -1,10 +1,9 @@
 {
-    "output_name": "IBM_real",
-    "mol_dir": "LiH_dist_8configs/LiH_1.5",
-    "ci_matrix_filepath": "LiH_dist_8configs/LiH_1.5/CI_matrices//LiH_1.5_cimat__8.out",
+    "output_name": "IBM_real_8",
+    "mol_dir": "LiH_1.5",
+    "ci_matrix_filepath": "LiH_1.5/CI_matrices/LiH_1.5_cimat__8.out",
     "backend_type": "IBMQ",
     "backend_name": "ibmq_quito",
-    "provider": "ibm-q/open/main",
     "encoding_type": "efficient",
     "ci_params_dict": {
         "molecule": "\n            Li\n            H 1 1.5\n            symmetry c1\n            ",
@@ -23,5 +22,5 @@
     "use_noise": true,
     "use_error_mit": true,
     "cals_matrix_refresh_period": 30,
-    "output_dir": "LiH_dist_8configs/LiH_1.5/IBM_real_VQE_result_Tue Aug 23 18:22:40 2022"
+    "output_dir": "LiH_1.5/IBM_real_8_VQE_result_Sun Jul 17 10:02:43 2022"
 }

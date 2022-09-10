@@ -215,15 +215,15 @@ def extract_all_results_2(output_file,distances,molecules_dir,running_options):
 
 if __name__ == "__main__":
     molecules_dir = 'LiH_dist_8configs'
-    # distances = np.arange(0.5,4.2,0.2)
-    # distances = [round(d,2) for d in distances]
-    distances = []
-    IBM_distances = [2.1,4.1]
+    distances = np.arange(0.5,4.2,0.2)
+    distances = [round(d,2) for d in distances]
+    # distances = []
+    IBM_distances = [0.5, 1.1, 1.5, 2.1, 4.1]
     # clear_vqe_results(molecules_dir,distances,'statevector')
     # clear_vqe_results(molecules_dir,distances,'noisy_simulator')
     # clear_vqe_results(molecules_dir,IBM_distances,'IBM_real')
 
-    generate_vqe_results(distances,molecules_dir ,running_options)
+    # generate_vqe_results(distances,molecules_dir ,running_options)
 
     output_file = 'LiH_dist_8configs'
     extract_all_results(output_file,distances, molecules_dir,running_options)

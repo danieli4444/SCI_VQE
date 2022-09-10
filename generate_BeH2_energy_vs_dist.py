@@ -13,8 +13,8 @@ import shutil
 from matplotlib import pyplot as plt
 from time import ctime
 
-running_options = ['statevector','noisy_simulator','IBM_real']
-
+# running_options = ['statevector','noisy_simulator','IBM_real']
+running_options = ['statevector']
 
 
 def clear_vqe_results(molecules_dir,distances,dir_to_delete):
@@ -219,9 +219,9 @@ if __name__ == "__main__":
     distances = np.arange(0.5,3.5,0.2)
     distances = [round(d,2) for d in distances]
     # distances = []
-    IBM_distances = [0.5,0.9,1.3,2.1,3.1]
+    IBM_distances = []
 
-    # clear_vqe_results(molecules_dir,distances,'statevector')
+    clear_vqe_results(molecules_dir,distances,'statevector')
     # clear_vqe_results(molecules_dir,distances,'noisy_simulator')
     # clear_vqe_results(molecules_dir,IBM_distances,'IBM_real')
 

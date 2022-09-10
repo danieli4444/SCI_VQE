@@ -64,8 +64,8 @@ def plot_results(results_file_path,output_file,error_output_file):
         z = IBM_real['vqe_averaged_energy_list'][idx] - IBM_real['exact_energy_list'][idx]
         diff_real.append(z)
     
-    plt.errorbar(IBM_distances,diff_real,yerr=IBM_real['vqe_averaged_energy_std_list'],
-        ecolor = 'red',capsize=2,label='Real hardware (IBMQ Oslo)',color='red',fmt='s')
+    # plt.errorbar(IBM_distances,diff_real,yerr=IBM_real['vqe_averaged_energy_std_list'],
+    #     ecolor = 'red',capsize=2,label='Real hardware (IBMQ Oslo)',color='red',fmt='s')
 
     diff_sim = []
     for idx,d in enumerate(distances):
@@ -78,6 +78,16 @@ def plot_results(results_file_path,output_file,error_output_file):
     z = np.array(len(distances)*[0])
     plt.errorbar(distances,len(distances)*[0],color='green',linestyle='dashed')
     plt.fill_between(distances,z - chemical_accuracy_line, z + chemical_accuracy_line,color='palegreen')
+
+
+    diff_statevector = []
+    for idx,d in enumerate(distances):
+        p = statevector['vqe_averaged_energy_list'][idx] - exact_energies[idx]
+        diff_statevector.append(p)
+    
+    plt.errorbar(distances,diff_statevector,yerr=statevector['vqe_averaged_energy_std_list'],
+        ecolor = 'blue',capsize=2,label='Noiseless (IBMQ Santiago)',color='blue',fmt='^')
+
 
     text = "Hydrogen Molecule - Energy error (VQE - Exact)"
     # ax.set_aspect(1.0/ax.get_data_ratio(), adjustable='box')
