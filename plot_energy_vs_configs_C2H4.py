@@ -44,8 +44,11 @@ def plot_results(results_file_path,output_file,error_output_file):
     
     noisy_simulator = total_results['noisy_simulator']
     noisy_configs = noisy_simulator['configs'] 
+    noisy_configs = noisy_configs[:-1]
     vqe10iterationsavg = noisy_simulator['vqe_averaged_energy_list']
     vqe10iterationsstd = noisy_simulator['vqe_averaged_energy_std_list']
+    vqe10iterationsavg = vqe10iterationsavg[:-1]
+    vqe10iterationsstd = vqe10iterationsstd[:-1]
     noisy_plot = plt.errorbar(noisy_configs,vqe10iterationsavg,yerr=vqe10iterationsstd,
         ecolor='purple' ,capsize=2,label='Noisy simulation (IBMQ Santiago)',color='purple',fmt='^')
     

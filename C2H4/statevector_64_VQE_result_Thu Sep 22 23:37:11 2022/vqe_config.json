@@ -1,0 +1,27 @@
+{
+    "output_name": "statevector_64",
+    "mol_dir": "C2H4",
+    "ci_matrix_filepath": "C2H4/CI_matrices/C2H4_cimat__64.out",
+    "backend_type": "simulator",
+    "backend_name": "None",
+    "provider": "ibm-q/open/main",
+    "encoding_type": "efficient",
+    "ci_params_dict": {
+        "molecule": "\n    C          0.0   0.0      0.653\n    C          0.0   0.0     -0.653\n    H          0.0   0.916    1.229\n    H          0.0  -0.916    1.229\n    H          0.0  -0.916   -1.229\n    H          0.0   0.916   -1.229\n    \n    symmetry c1\n\n    ",
+        "basis_set": "sto-3g",
+        "nuclear_repulsion_energy": 33.74528078075915,
+        "ci_type": "fci",
+        "ci_ground_state_energy": -77.23211357330942,
+        "ci_total_num_configs": 9018009
+    },
+    "shift": 33.74528078075915,
+    "simulator": "statevector_simulator",
+    "ansatz_layers": 11,
+    "entanglement_type": "circular",
+    "max_iterations": 5000,
+    "shots": 10000,
+    "use_noise": false,
+    "use_error_mit": false,
+    "cals_matrix_refresh_period": 30,
+    "output_dir": "C2H4/statevector_64_VQE_result_Thu Sep 22 23:37:11 2022"
+}

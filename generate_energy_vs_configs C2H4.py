@@ -39,7 +39,7 @@ def generate_vqe_results(configs,noisy_configs,IBM_configs,molecules_dir,running
             output_name = 'statevector'        
             simulator = 'statevector_simulator'  
             # configs =   [2, 4, 8, 16, 32, 64, 128]    
-            layers =    [0, 1, 2, 3, 7, 9, 11, 13, 15]
+            layers =    [0, 1, 2, 3, 7, 11, 18]
             for idx,c in enumerate(configs):
                 ci_matrix_file = '{0}/CI_matrices/{0}_cimat__{1}.out'.format(molecules_dir,c)
                 output_name2 = output_name + '_{0}'.format(c)
@@ -232,7 +232,7 @@ if __name__ == "__main__":
     molecules_dir = 'C2H4'
     # configs = [2, 4, 8, 16, 32, 64]
     noiseless_configs = [2,4,8,16,32,64,128]
-    noisy_configs = [2,4,8,16,32]
+    noisy_configs = []
     # noisy_configs = []
     # IBM_configs = [2,4,8]
     IBM_configs = []
