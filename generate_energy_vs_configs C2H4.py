@@ -38,13 +38,13 @@ def generate_vqe_results(configs,noisy_configs,IBM_configs,molecules_dir,running
         if run_opt == 'statevector':
             output_name = 'statevector'        
             simulator = 'statevector_simulator'  
-            # configs = [2, 4, 8, 16, 32, 64]    
-            layers =    [0, 1, 2, 3, 5, 7, 9, 11, 13]
+            # configs =   [2, 4, 8, 16, 32, 64, 128]    
+            layers =    [0, 1, 2, 3, 7, 9, 11, 13, 15]
             for idx,c in enumerate(configs):
                 ci_matrix_file = '{0}/CI_matrices/{0}_cimat__{1}.out'.format(molecules_dir,c)
                 output_name2 = output_name + '_{0}'.format(c)
                 if c > 16:
-                    iterations = 1000
+                    iterations = 5000
                 else:
                     iterations = 500
                 vqeconfig = VQEConfig(
@@ -69,8 +69,8 @@ def generate_vqe_results(configs,noisy_configs,IBM_configs,molecules_dir,running
         if run_opt == 'noisy_simulator':
             output_name = 'noisy_simulator'        
             simulator = 'qasm_simulator'      
-            layers =    [0, 1, 2, 3, 4]
-            iterations = [200,200,300,300,300]
+            layers =    [0, 1, 2, 3, 7]
+            iterations = [300,300,300,300,300]
 
             for idx,c in enumerate(noisy_configs):
                 final_averaged_energy_list = []
@@ -111,7 +111,7 @@ def generate_vqe_results(configs,noisy_configs,IBM_configs,molecules_dir,running
         if run_opt == 'IBM_real':
             output_name = 'IBM_real'     
             # layers =    [0, 1, 2, 3, 4, 5 ]
-            layers = [0,1,2,3]
+            layers = [0,1,2]
             # iterations = [30,80,100,80,100,100]
             iterations = [100,100,100,100]
             for idx,c in enumerate(IBM_configs):
@@ -229,19 +229,19 @@ def extract_all_results(output_file,configs,noisy_configs,IBM_configs,molecules_
 
 
 if __name__ == "__main__":
-    molecules_dir = 'C2H4_tridiagonal'
+    molecules_dir = 'C2H4'
     # configs = [2, 4, 8, 16, 32, 64]
-    noiseless_configs = [2,4,8,16,32,64,128,256]
-    noisy_configs = [2,4,8,16]
+    noiseless_configs = [2,4,8,16,32,64,128]
+    noisy_configs = [2,4,8,16,32]
     # noisy_configs = []
     # IBM_configs = [2,4,8]
-    IBM_configs = [2,4]
-    # clear_vqe_results(molecules_dir,noiseless_configs,'statevector')
+    IBM_configs = []
+    clear_vqe_results(molecules_dir,noiseless_configs,'statevector')
     # clear_vqe_results(molecules_dir,noiseless_configs,'noisy_simulator')
     # clear_vqe_results(molecules_dir,configs,'IBM_real')
 
     # exact_daig_configs = [2,4,8,16,32,128,256,512,1024,2048,4096]
     generate_vqe_results(noiseless_configs,noisy_configs,IBM_configs,molecules_dir ,running_options)
 
-    output_file = 'C2H4_tridiagonal'
+    output_file = 'C2H4'
     extract_all_results(output_file,noiseless_configs,noisy_configs, IBM_configs, molecules_dir,running_options)

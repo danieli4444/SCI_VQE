@@ -83,8 +83,8 @@ def plot_results(results_file_path,output_file,error_output_file):
 
    
 if __name__ == "__main__":
-    results_file_name = "C2H4_tridiagonal_Fri Jul 22 19:37:14 2022"
-    molecule_dir = "C2H4_tridiagonal"
+    results_file_name = "C2H4_Wed Sep 21 12:10:23 2022"
+    molecule_dir = "C2H4"
     results_file_path = molecule_dir+ '/' + results_file_name + '.json'
     output_file = molecule_dir+ '/' + results_file_name +'.png'
     error_output_file = molecule_dir + '/error_' + results_file_name + '.png'

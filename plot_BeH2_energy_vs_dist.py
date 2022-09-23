@@ -36,8 +36,9 @@ def plot_results(results_file_path,output_file,error_output_file):
     
     
     IBM_real = total_results['IBM_real']
-    IBM_distances = IBM_real['distance']
-
+    # IBM_distances = IBM_real['distance']
+    IBM_distances = [0.5, 0.9, 1.3, 2.1, 3.1]
+    
     plt.errorbar(IBM_distances,IBM_real['vqe_averaged_energy_list'],yerr=IBM_real['vqe_averaged_energy_std_list'],
         ecolor = 'red',capsize=2,label='Real hardware (IBMQ oslo)',color='red',fmt='s')
         # yerr = error_bar,linestyle="dotted",ecolor = 'red',label='std',capsize=3)
@@ -104,7 +105,7 @@ if __name__ == "__main__":
     # generate_vqe_results()
     # results_file_path = 'H2_dist/H2_E_vs_dist.json'
     molecules_dir = 'BeH2_dist'
-    results_file_name = "BeH2_E_vs_dist_Sat Aug 20 22:53:26 2022"
+    results_file_name = "BeH2_E_vs_dist_Sat Sep 10 09:58:11 2022"
     results_file_path = molecules_dir+ '/' + results_file_name + '.json'
     output_file = molecules_dir+ '/' + results_file_name +'.png'
     error_output_file = molecules_dir + '/error_' + results_file_name + '.png'

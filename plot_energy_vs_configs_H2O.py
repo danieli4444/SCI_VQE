@@ -14,7 +14,7 @@ def plot_results(results_file_path,output_file,error_output_file):
     # IBM_real = total_results['IBM_real']
     chemical_accuracy = 0.0016
     plt.figure()
-    plt.xlabel("# Determinants ",fontsize=15)
+    plt.xlabel("# Determinants [#qubits]",fontsize=15)
     plt.ylabel("Energy [Ha]",fontsize=15)
     text = "H2O - Energy vs number of configurations"
 
@@ -29,7 +29,8 @@ def plot_results(results_file_path,output_file,error_output_file):
     
     statevector = total_results['statevector']
     noiseless_plot = plt.errorbar(configs,statevector['vqe_averaged_energy_list'],label='Noisless statevector simulation',color='blue',fmt='o')
-    plt.xticks(configs)
+    newticks = ['2[1]','4[2]','8[3]','16[4]','32[5]']
+    plt.xticks(configs,newticks)
     y_axis = np.arange(-75.015, max(exact_energies)+0.1, 0.005)
     plt.yticks(y_axis)
 
