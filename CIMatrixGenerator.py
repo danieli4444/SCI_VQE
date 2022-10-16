@@ -346,9 +346,26 @@ def generate_ammonia_ci_matrix():
     ci1 = CIMatrixGenerator(NH3_mol,mol_name,basis)
     ci_type = 'fci'
     ci1.generate_ci_results(ci_type) # use full ci for finding the most significant configs
+
+def generate_NH3_eq_ci_matrix():
+    # equilbrium geometry taken from HF sto-3g geometry- https://cccbdb.nist.gov/energy3x.asp?method=1&basis=20&charge=0
+    print("generating ci matrices!")
+    NH3_mol =  """
+
+        N 0.0    0.0     0.128
+        H 0.0    0.941   -0.298
+        H 0.815 -0.470  -0.298
+        H -0.815 -0.470  -0.298
+        symmetry c1
+        """
+    basis = 'sto-3g'
+    # number of wanted configurations (currently tested only powers of 2 ):
+    mol_name = 'NH3_NIST'
+    ci1 = CIMatrixGenerator(NH3_mol,mol_name,basis)
+    ci_type = 'fci'
+    ci1.generate_ci_results(ci_type,max_configs=128) # use full ci for finding the most significant configs
     
-     
-    for i in range(1,7):
+    for i in range(1,8):
         num_configs = 2**i
         ci1.get_reduced_cimatrix(num_configs)    
 
@@ -415,7 +432,7 @@ def generate_benzene_ci_matrix():
 
 
 def generate_C2H4_ci_matrix():
-    #equilbrium geometry taken from - https://cccbdb.nist.gov/energy3x.asp?method=1&basis=20&charge=0
+    #equilbrium geometry taken from HF sto-3g geometry- https://cccbdb.nist.gov/energy3x.asp?method=1&basis=20&charge=0
     
     C2H4 = """
     C          0.0   0.0      0.653
@@ -496,8 +513,9 @@ if __name__ == "__main__":
     # generate_BeH2_vs_distance()
     # generate_h20_ci_matrices()
     # generate_h2_ci_matrix()
-    generate_ammonia_ci_matrix()
+    # generate_ammonia_ci_matrix()
     # generate_benzene_ci_matrix()
     # generate_H2_vs_distance()
     # generate_LiH_vs_distance()
     # generate_C2H4_ci_matrix()
+    generate_NH3_eq_ci_matrix()

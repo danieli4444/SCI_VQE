@@ -1,0 +1,181 @@
+{
+    "statevector": {
+        "configs": [
+            2,
+            4
+        ],
+        "vqe_optimal_energy_list": [
+            -7.876899138058658,
+            -7.880197673948759
+        ],
+        "vqe_minimal_energy_list": [
+            -7.876899141127202,
+            -7.880197674002705
+        ],
+        "exact_energy_list": [
+            -7.876899141132457,
+            -7.880197675259218
+        ],
+        "vqe_std_list": [
+            0.0,
+            0.0
+        ],
+        "vqe_averaged_energy_list": [
+            -7.876889128243147,
+            -7.880197657554227
+        ],
+        "vqe_averaged_energy_std_list": [
+            2.235343202676575e-05,
+            1.7239242867767276e-08
+        ],
+        "vqe_layers_used": [
+            0.0,
+            1.0
+        ],
+        "final_averaged_energy": [
+            -7.876750775448615,
+            -7.879686048977367
+        ],
+        "final_averaged_std": [
+            0.0,
+            0.0
+        ],
+        "final_energy_list": [
+            [
+                -7.876750775448615
+            ],
+            [
+                -7.879686048977367
+            ]
+        ]
+    },
+    "noisy_simulator": {
+        "configs": [
+            2,
+            4
+        ],
+        "vqe_optimal_energy_list": [
+            -7.87678414567954,
+            -7.879008404359519
+        ],
+        "vqe_minimal_energy_list": [
+            -7.877876797183589,
+            -7.881428619219459
+        ],
+        "exact_energy_list": [
+            -7.876899141132457,
+            -7.880197675259218
+        ],
+        "vqe_std_list": [
+            0.0005284218577287103,
+            0.0005359497806364357
+        ],
+        "vqe_averaged_energy_list": [
+            -7.876750775448615,
+            -7.879686048977367
+        ],
+        "vqe_averaged_energy_std_list": [
+            0.0007869230889328859,
+            0.0007515577701922075
+        ],
+        "vqe_layers_used": [
+            0.0,
+            1.0
+        ],
+        "final_averaged_energy": [
+            -7.876750775448615,
+            -7.879686048977367
+        ],
+        "final_averaged_std": [
+            0.0,
+            0.0
+        ],
+        "final_energy_list": [
+            [
+                -7.876750775448615
+            ],
+            [
+                -7.879686048977367
+            ]
+        ]
+    },
+    "IBM_real": {
+        "configs": [
+            2,
+            4
+        ],
+        "vqe_optimal_energy_list": [
+            -7.8739164808487345,
+            -7.867332391260213
+        ],
+        "vqe_minimal_energy_list": [
+            -7.879882836415259,
+            -7.88314735079004
+        ],
+        "exact_energy_list": [
+            -7.876899141132457,
+            -7.880197675259218
+        ],
+        "vqe_std_list": [
+            0.0013489621108356744,
+            0.0012170670558016494
+        ],
+        "vqe_averaged_energy_list": [
+            -7.875640813804037,
+            -7.871594877391624
+        ],
+        "vqe_averaged_energy_std_list": [
+            0.0027180389170083064,
+            0.007358893981556062
+        ],
+        "vqe_layers_used": [
+            0.0,
+            1.0
+        ],
+        "final_averaged_energy": [
+            -7.876750775448615,
+            -7.879686048977367
+        ],
+        "final_averaged_std": [
+            0.0,
+            0.0
+        ],
+        "final_energy_list": [
+            [
+                -7.876750775448615
+            ],
+            [
+                -7.879686048977367
+            ]
+        ]
+    },
+    "FCI": {
+        "configs": [
+            2,
+            4
+        ],
+        "vqe_optimal_energy_list": [],
+        "vqe_minimal_energy_list": [],
+        "exact_energy_list": [],
+        "vqe_std_list": [],
+        "vqe_averaged_energy_list": [],
+        "vqe_averaged_energy_std_list": [],
+        "vqe_layers_used": [],
+        "final_averaged_energy": [
+            -7.876750775448615,
+            -7.879686048977367
+        ],
+        "final_averaged_std": [
+            0.0,
+            0.0
+        ],
+        "final_energy_list": [
+            [
+                -7.876750775448615
+            ],
+            [
+                -7.879686048977367
+            ]
+        ]
+    }
+}

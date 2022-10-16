@@ -14,7 +14,7 @@ def plot_results(results_file_path,output_file,error_output_file):
     # IBM_real = total_results['IBM_real']
     chemical_accuracy = 0.0016
     
-    fig = plt.figure(figsize=(5.7,5.2))
+    fig = plt.figure(figsize=(5.7,5.2),dpi=100)
     ax = fig.add_subplot(111)
     
     plt.xlabel("Interatomic distance [Angstrom]",fontsize=15)
@@ -28,8 +28,8 @@ def plot_results(results_file_path,output_file,error_output_file):
     chemical_accuracy_line = np.array(l*[chemical_accuracy])
 
     # exact energies (diagonalization)
-    plt.plot(distances,exact_energies,'-gd',color='black',label='Exact diagonalization',linestyle="dotted")
-    plt.fill_between(distances,exact_energies - chemical_accuracy_line, exact_energies + chemical_accuracy_line,color='grey')
+    plt.plot(distances,exact_energies,color='green',label='FCI (sto-3g)',linestyle="dashed")
+    # plt.fill_between(distances,exact_energies - chemical_accuracy_line, exact_energies + chemical_accuracy_line,color='grey')
     
     statevector = total_results['statevector']
     plt.errorbar(distances,statevector['vqe_averaged_energy_list'],label='Noisless statevector simulation',color='blue',fmt='o')
@@ -48,7 +48,7 @@ def plot_results(results_file_path,output_file,error_output_file):
     
     
     # ax.set_aspect(1.0/ax.get_data_ratio(), adjustable='box')
-    plt.legend()
+    plt.legend(fontsize = 10)
     plt.tight_layout()
 
     plt.savefig(output_file)
@@ -57,10 +57,22 @@ def plot_results(results_file_path,output_file,error_output_file):
 
     # fig = plt.figure(figsize=(5.5,4.5))
     # ax = fig.add_subplot(111)
-    fig = plt.figure(figsize=(5.7,5.2))
+    # fig = plt.figure(figsize=(5.68,5.175))
+    fig = plt.figure(figsize=(5.7,5.2),dpi=100)
     ax = fig.add_subplot(111)
     
-  
+    z = np.array(len(distances)*[0])
+    plt.plot(distances,len(distances)*[0],color='green',label='FCI (sto-3g)',linestyle='dashed')
+    plt.fill_between(distances,z - chemical_accuracy_line, z + chemical_accuracy_line,color='palegreen')
+    
+    diff_statevector = []
+    for idx,d in enumerate(distances):
+        p = statevector['vqe_averaged_energy_list'][idx] - exact_energies[idx]
+        diff_statevector.append(p)
+    
+    plt.errorbar(distances,diff_statevector,yerr=statevector['vqe_averaged_energy_std_list'],
+        ecolor = 'blue',capsize=2,label='Noiseless statevector simulation',color='blue',fmt='o')
+
     
     diff_sim = []
     for idx,d in enumerate(distances):
@@ -79,22 +91,9 @@ def plot_results(results_file_path,output_file,error_output_file):
     plt.errorbar(IBM_distances,diff_real,yerr=IBM_real['vqe_averaged_energy_std_list'],
         ecolor = 'red',capsize=2,label='Real hardware (IBMQ Lima)',color='red',fmt='s')
   
-    z = np.array(len(distances)*[0])
-    plt.errorbar(distances,len(distances)*[0],color='green',linestyle='dashed')
-    plt.fill_between(distances,z - chemical_accuracy_line, z + chemical_accuracy_line,color='palegreen')
 
-    
-    diff_statevector = []
-    for idx,d in enumerate(distances):
-        p = statevector['vqe_averaged_energy_list'][idx] - exact_energies[idx]
-        diff_statevector.append(p)
-    
-    plt.errorbar(distances,diff_statevector,yerr=statevector['vqe_averaged_energy_std_list'],
-        ecolor = 'blue',capsize=2,label='Noiseless (IBMQ Lima)',color='blue',fmt='^')
 
-    
-    
-    text = "Hydrogen Molecule - Energy error (VQE - Exact)"
+
     # y_axis = np.arange(-0.006, 0.007, 0.001)
     # plt.yticks(y_axis)
     # ratio = 0.007011596814686329
@@ -103,7 +102,7 @@ def plot_results(results_file_path,output_file,error_output_file):
     plt.xlabel("Interatomic distance [Angstrom]",fontsize=15)
     plt.ylabel("Energy error [Ha]",fontsize=15)
     plt.xticks(distances[::2])
-    plt.legend(loc='upper left')
+    plt.legend(loc='upper left',fontsize = 10)
 
     plt.tight_layout()
     plt.savefig(error_output_file)

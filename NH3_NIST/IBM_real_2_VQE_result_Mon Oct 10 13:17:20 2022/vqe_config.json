@@ -1,0 +1,27 @@
+{
+    "output_name": "IBM_real_2",
+    "mol_dir": "NH3_NIST",
+    "ci_matrix_filepath": "NH3_NIST/CI_matrices/NH3_NIST_cimat__2.out",
+    "backend_type": "IBMQ",
+    "backend_name": "ibm_nairobi",
+    "provider": "ibm-q/open/main",
+    "encoding_type": "efficient",
+    "ci_params_dict": {
+        "molecule": "\n\n        N 0.0    0.0     0.128\n        H 0.0    0.941   -0.298\n        H 0.815 -0.470  -0.298\n        H -0.815 -0.470  -0.298\n        symmetry c1\n        ",
+        "basis_set": "sto-3g",
+        "nuclear_repulsion_energy": 11.73373926175745,
+        "ci_type": "fci",
+        "ci_ground_state_energy": -55.524589065582546,
+        "ci_total_num_configs": 3136
+    },
+    "shift": 11.73373926175745,
+    "simulator": "",
+    "ansatz_layers": 0,
+    "entanglement_type": "circular",
+    "max_iterations": 100,
+    "shots": 20000,
+    "use_noise": true,
+    "use_error_mit": true,
+    "cals_matrix_refresh_period": 30,
+    "output_dir": "NH3_NIST/IBM_real_2_VQE_result_Mon Oct 10 13:17:20 2022"
+}

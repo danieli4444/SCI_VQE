@@ -14,6 +14,7 @@ def create_chart(ci_mat_dir,compared_energy,chart_name):
     ci_energy_list = []
     num_configs_list = []
     num_qubits_list = []
+    x = os.listdir(ci_mat_dir)
     for ci_mat_file in os.listdir(ci_mat_dir):
         configs_num = ci_mat_file.replace('.out','')
         configs_num = [int(s) for s in configs_num.split('_') if s.isdigit()][-1]
@@ -61,7 +62,7 @@ if __name__ == "__main__":
     # create_chart(ci_mat_dir,fci_energy,chart_name)
 
 
-    ci_mat_dir = 'C2H4/CI_matrices'
-    fci_energy = -77.23211357330942- 33.74528078075915
-    chart_name = 'C2H4'
+    ci_mat_dir = 'BeH2_1.3/CI_matrices'
+    fci_energy = -15.595047080804692- 3.4600048389961535
+    chart_name = 'BeH2_1.3'
     create_chart(ci_mat_dir,fci_energy,chart_name)

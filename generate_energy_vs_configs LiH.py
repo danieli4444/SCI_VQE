@@ -17,7 +17,7 @@ import os
 import shutil
 from time import ctime
 
-running_options = ['statevector','noisy_simulator','IBM_real']
+running_options = ['statevector','noisy_simulator','IBM_real','FCI']
 
 final_energy_list = []
 final_averaged_energy = []
@@ -94,7 +94,7 @@ def generate_vqe_results(configs,noisy_configs,IBM_configs,molecules_dir,running
                     cals_matrix_refresh_period=30
                 )
                 new_runner = VQERunner(vqeconfig)
-                for i in range(1,11):
+                for i in range(1,2):
                     print("i = ",i)
                     e = new_runner.run_VQE_qasm()
                     final_averaged_energy_list.append(e)
@@ -112,9 +112,9 @@ def generate_vqe_results(configs,noisy_configs,IBM_configs,molecules_dir,running
         if run_opt == 'IBM_real':
             output_name = 'IBM_real'     
             # layers =    [0, 1, 2, 3, 4, 5 ]
-            layers = [2]
+            layers = [0,1]
             # iterations = [30,80,100,80,100,100]
-            iterations = [100]
+            iterations = [100,100]
             for idx,c in enumerate(IBM_configs):
                 ci_matrix_file = '{0}/CI_matrices/{0}_cimat__{1}.out'.format(molecules_dir,c)
                 output_name2 = output_name + '_{0}'.format(c)
@@ -136,6 +136,14 @@ def generate_vqe_results(configs,noisy_configs,IBM_configs,molecules_dir,running
                 )
                 new_runner = VQERunner(vqeconfig)
                 new_runner.run_VQE_qasm()
+        
+        if run_opt == 'FCI':
+            for idx,c in enumerate(configs):
+                ci_matrix_file = '{0}/CI_matrices/{0}_cimat__{1}.out'.format(molecules_dir,c)
+            filename = molecules_dir+ '/' + 'CI_result.json'
+            with open(filename,'r') as f:
+                j = json.load(f)
+                FCI_energy = j['ci_ground_state_energy']
 
 
     
@@ -196,14 +204,14 @@ def extract_all_results(output_file,configs,noisy_configs,IBM_configs,molecules_
 if __name__ == "__main__":
     molecules_dir = 'LiH_1.5'
     # configs = [2, 4, 8, 16, 32, 64]
-    configs = []
-    noisy_configs = []
+    configs = [2,4]
+    noisy_configs = [2,4]
     # noisy_configs = []
     # IBM_configs = [2,4,8]
-    IBM_configs = [8]
+    IBM_configs = [2,4]
     # clear_vqe_results(molecules_dir,configs,'statevector')
     # clear_vqe_results(molecules_dir,configs,'noisy_simulator')
-    clear_vqe_results(molecules_dir,configs,'IBM_real')
+    # clear_vqe_results(molecules_dir,configs,'IBM_real')
 
     generate_vqe_results(configs,noisy_configs,IBM_configs,molecules_dir ,running_options)
 

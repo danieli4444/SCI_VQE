@@ -13,7 +13,7 @@ import shutil
 from matplotlib import pyplot as plt
 from time import ctime
 
-running_options = ['statevector','noisy_simulator','IBM_real']
+running_options = ['statevector','noisy_simulator','IBM_real','FCI']
 
 
 
@@ -127,23 +127,35 @@ def extract_all_results(output_file,distances,molecules_dir,running_options):
         vqe_minimal_energy_list = []
         vqe_averaged_energy_list = []
         vqe_averaged_energy_std_list = []
-        for d in distances:
-            mol_name = '/BeH2_' + '{0}'.format(d)
-            mol_dir= molecules_dir+ mol_name
-            results_dir_list = [x[0] for x in os.walk(mol_dir)]
-            for result_dir in results_dir_list:
-                if run_opt in result_dir:
-                    vqe_result_file = result_dir + '/VQE_output.json'
-                    vqe_config_file = result_dir + '/vqe_config.json'
-                    with open(vqe_result_file) as json_file:
-                        vqe_result = json.load(json_file)
-                        vqe_optimal_energy_list.append(float(vqe_result['optimal_energy']))
-                        exact_energy_list.append(float(vqe_result['exact_ground_energy']))
-                        vqe_minimal_energy_list.append(float(vqe_result['minimal_energy']))
-                        vqe_std_list.append(float(vqe_result['optimal_energy_std']))
-                        vqe_averaged_energy_list.append(float(vqe_result['averaged_energy']))
-                        vqe_averaged_energy_std_list.append(float(vqe_result['averaged_energy_std']))
-                        
+        FCI_energy_list = []
+        if run_opt == 'FCI':
+            for d in distances:
+                mol_name = '/BeH2_' + '{0}'.format(d)
+                mol_dir= molecules_dir+ mol_name
+                filename = mol_dir+ '/' + 'CI_result.json'
+                with open(filename,'r') as f:
+                    j = json.load(f)
+                    FCI_energy = j['ci_ground_state_energy']
+                    FCI_energy_list.append(FCI_energy)
+        else:
+    
+            for d in distances:
+                mol_name = '/BeH2_' + '{0}'.format(d)
+                mol_dir= molecules_dir+ mol_name
+                results_dir_list = [x[0] for x in os.walk(mol_dir)]
+                for result_dir in results_dir_list:
+                    if run_opt in result_dir:
+                        vqe_result_file = result_dir + '/VQE_output.json'
+                        vqe_config_file = result_dir + '/vqe_config.json'
+                        with open(vqe_result_file) as json_file:
+                            vqe_result = json.load(json_file)
+                            vqe_optimal_energy_list.append(float(vqe_result['optimal_energy']))
+                            exact_energy_list.append(float(vqe_result['exact_ground_energy']))
+                            vqe_minimal_energy_list.append(float(vqe_result['minimal_energy']))
+                            vqe_std_list.append(float(vqe_result['optimal_energy_std']))
+                            vqe_averaged_energy_list.append(float(vqe_result['averaged_energy']))
+                            vqe_averaged_energy_std_list.append(float(vqe_result['averaged_energy_std']))
+                            
 
 
         current_opt_results = {'distance': distances,
@@ -152,7 +164,8 @@ def extract_all_results(output_file,distances,molecules_dir,running_options):
             'exact_energy_list': exact_energy_list,
             'vqe_std_list': vqe_std_list,
             'vqe_averaged_energy_list': vqe_averaged_energy_list,
-            'vqe_averaged_energy_std_list': vqe_averaged_energy_std_list 
+            'vqe_averaged_energy_std_list': vqe_averaged_energy_std_list,
+            'FCI_energy':FCI_energy_list
             }
 
         total_results['{0}'.format(run_opt)] = current_opt_results
