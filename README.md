@@ -13,4 +13,4 @@ important notes:
 prerequisites:
 * run the code with psi4 conda python intepreter (needed to be set manualy in the VScode editor) 
     psi4 conds installation - https://psicode.org/psi4manual/master/conda.html
-* install qiskit old version containing qiskit aqua and qiskit chemistry 
+* install qiskit old version (0.18.3 for example) containing qiskit aqua and qiskit chemistry 
