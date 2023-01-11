@@ -186,7 +186,7 @@ class CIMatrixGenerator:
         output.toJson(filename)
 
 
-    def generate_ci_results(self,ci_type, max_configs=128):
+    def generate_ci_results(self,ci_type, max_configs):
         """ runs psi4 ci for the molecule and saves all relevant info
 
         Args:
@@ -266,15 +266,19 @@ def generate_h20_ci_matrices():
         """
     basis = 'sto-3g'
     # number of wanted configurations (currently tested only powers of 2 ):
-    num_configs = 130
-    mol_name = 'H2O_tridiagonal'
+    # num_configs = 130
+    mol_name = 'h2O_test'
     ci1 = CIMatrixGenerator(h20_mol,mol_name,basis)
     ci_type = 'fci'
-    ci1.generate_ci_results(ci_type) # use full ci for finding the most significant configs
-    
+
     for i in range(1,7):
         num_configs = 2**i
+        ci1.generate_ci_results(ci_type,num_configs) # use full ci for finding the most significant configs
         ci1.get_reduced_cimatrix(num_configs)    
+
+    # for i in range(1,7):
+    #     num_configs = 2**i
+    #     ci1.get_reduced_cimatrix(num_configs)    
 
 
 def generate_h2_ci_matrix(dist):
@@ -511,11 +515,11 @@ def generate_BeH2_vs_distance():
 if __name__ == "__main__":
     # generate_BeH2_matrices()
     # generate_BeH2_vs_distance()
-    # generate_h20_ci_matrices()
+    generate_h20_ci_matrices()
     # generate_h2_ci_matrix()
     # generate_ammonia_ci_matrix()
     # generate_benzene_ci_matrix()
     # generate_H2_vs_distance()
     # generate_LiH_vs_distance()
     # generate_C2H4_ci_matrix()
-    generate_NH3_eq_ci_matrix()
+    # generate_NH3_eq_ci_matrix()
